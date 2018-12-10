@@ -17,7 +17,7 @@ function getAsyncRouterByService(data){
 
 export default new Vuex.Store({
   state: {
-    permission: 2, // 1 为管理员权限，2 为角色权限
+    permission: 1, // 1 为管理员权限，2 为角色权限
     addRouters: []
   },
   mutations: {

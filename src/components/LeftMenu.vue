@@ -11,14 +11,14 @@
       <!--管理员权限-->
       <template v-if="isAdmin">
         <el-menu-item v-for="(item, index) in routers" :index="item.path" :key="index">
-          <i class="el-icon-menu"></i>
+          <i :class="item.icon"></i>
           <span slot="title">{{item.name}}</span>
         </el-menu-item>
       </template>
       <!--角色权限-->
       <template v-else>
         <el-menu-item v-for="(item, index) in routers_role" :index="item.path" :key="index">
-          <i class="el-icon-menu"></i>
+          <i :class="item.icon"></i>
           <span slot="title">{{item.name}}</span>
         </el-menu-item>
       </template>
@@ -35,29 +35,35 @@ export default {
       routers: [ // 管理员权限
         {
           name:'首页',
-          path:'/index'
+          path:'/index',
+          icon:'el-icon-menu'
         },
         {
           name:'商品',
-          path:'/goods'
+          path:'/goods',
+          icon:'el-icon-goods'
         },
         {
           name:'订单',
-          path:'/orders'
+          path:'/orders',
+          icon:'el-icon-document'
         },
         {
           name:'会员',
-          path:'/member'
+          path:'/member',
+          icon:'el-icon-service'
         }
       ],
       routers_role:[// 角色权限
         {
           name:'首页',
-          path:'/index'
+          path:'/index',
+          icon:'el-icon-menu'
         },
         {
           name:'会员',
-          path:'/member'
+          path:'/member',
+          icon:'el-icon-service'
         }
       ]
     }
